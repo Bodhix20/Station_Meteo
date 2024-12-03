@@ -12,7 +12,7 @@ using namespace sixtron;
 I2C i2c1(I2C1_SDA, I2C1_SCL);          // Use the correct pins for your board
 BME280 sensor(&i2c1);                  // Pass I2C instance to the BME280 sensor
 
-int main() {
+int main2() {
     // Initialize sensor
     if (!sensor.initialize()) {
         printf("Failed to initialize BME280 sensor.\n");
