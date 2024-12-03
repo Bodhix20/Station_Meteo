@@ -1,3 +1,4 @@
+/*
 #include "mbed.h"
 
 namespace{
@@ -6,20 +7,25 @@ namespace{
 }
 
 DigitalOut led1(LED1,0);
+Mutex stdio_mutex;
 
 void ping(){
     for(int i=0 ; i<PING_PONG_COUNT ; i++){
+        stdio_mutex.lock();
         printf("Ping!\n");
+        stdio_mutex.unlock();
     }
 }
 
 void pong(){
     for(int i=0 ; i<PING_PONG_COUNT ; i++){
+        stdio_mutex.lock();
         printf("Pong!\n");
+        stdio_mutex.unlock();
     }
 }
 
-int main(){
+int main2(){
     Thread ping_thread;
     Thread pong_thread;
 
@@ -36,3 +42,4 @@ int main(){
 
 
 }
+*/
